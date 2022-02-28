@@ -196,7 +196,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -37261,10 +37261,37 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4___default()(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4___default()(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3___default()(this, result); }; }
+function _createSuper(Derived) {
+  var hasNativeReflectConstruct = _isNativeReflectConstruct();
 
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+  return function _createSuperInternal() {
+    var Super = _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4___default()(Derived),
+        result;
 
+    if (hasNativeReflectConstruct) {
+      var NewTarget = _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4___default()(this).constructor;
+
+      result = Reflect.construct(Super, arguments, NewTarget);
+    } else {
+      result = Super.apply(this, arguments);
+    }
+
+    return _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3___default()(this, result);
+  };
+}
+
+function _isNativeReflectConstruct() {
+  if (typeof Reflect === "undefined" || !Reflect.construct) return false;
+  if (Reflect.construct.sham) return false;
+  if (typeof Proxy === "function") return true;
+
+  try {
+    Date.prototype.toString.call(Reflect.construct(Date, [], function () {}));
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
 /* eslint-disable linebreak-style */
 
 /* eslint-disable no-tabs */
@@ -37276,6 +37303,8 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 /* eslint-disable react/button-has-type */
 
 /* eslint-disable import/prefer-default-export */
+
+
 
 
 var HomePage = /*#__PURE__*/function (_React$PureComponent) {
@@ -37431,17 +37460,6 @@ function Routes() {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Routes);
-
-/***/ }),
-
-/***/ "./src/sass/main.scss":
-/*!****************************!*\
-  !*** ./src/sass/main.scss ***!
-  \****************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
 
 /***/ }),
 
@@ -37601,15 +37619,14 @@ var store = Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(_reducers_
 
 /***/ }),
 
-/***/ 0:
-/*!**************************************************!*\
-  !*** multi ./src/index.jsx ./src/sass/main.scss ***!
-  \**************************************************/
+/***/ 1:
+/*!*****************************!*\
+  !*** multi ./src/index.jsx ***!
+  \*****************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\User\OneDrive\Desktop\REACT PROJECT\laravel-mix-pwa\src\index.jsx */"./src/index.jsx");
-module.exports = __webpack_require__(/*! C:\Users\User\OneDrive\Desktop\REACT PROJECT\laravel-mix-pwa\src\sass\main.scss */"./src/sass/main.scss");
+module.exports = __webpack_require__(/*! C:\Users\User\OneDrive\Desktop\REACT PROJECT\laravel-mix-pwa\src\index.jsx */"./src/index.jsx");
 
 
 /***/ })

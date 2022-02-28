@@ -16,6 +16,7 @@ const mix = require('laravel-mix');
 // Configure what it does
 mix.setPublicPath('dist')
   .react('src/index.jsx', 'dist/js/')
+  .js('src/service-worker.js', 'dist/')
   .sass('src/sass/main.scss', 'dist/css/')
   .copy('src/static', 'dist');
 
