@@ -20,33 +20,39 @@ mix.setPublicPath('dist')
   .js('src/service-worker.js', 'dist/')
   .sass('src/sass/main.scss', 'dist/css/')
   .copy('src/static', 'dist')
+  .webpackConfig({
+    output: { publicPath: '' }
+  })
   .generateSW({
+    // Set the path to the sw.js file
+    swDest: path.join(`${__dirname}/dist`, 'sw.js'),
+
     // Do not precache images
-    exclude: [/\.(?:png|jpg|jpeg|svg)$/],
+    exclude: [
+        /\.(?:png|jpg|jpeg|svg)$/,
+        // Ignore the mix.js that's being generated 
+        'mix.js'
+    ],
 
     // Define runtime caching rules.
-    runtimeCaching: [{
-        // Match any request that ends with .png, .jpg, .jpeg or .svg.
-        urlPattern: /\.(?:png|jpg|jpeg|svg)$/,
+    runtimeCaching: [
+        {
+            // Match any request that ends with .png, .jpg, .jpeg or .svg.
+            urlPattern: /\.(?:png|jpg|jpeg|svg)$/,
 
-        // Apply a cache-first strategy.
-        handler: 'CacheFirst',
+            // Apply a cache-first strategy.
+            handler: 'CacheFirst',
 
-        options: {
-            // Use a custom cache name.
-            cacheName: 'images',
-
-            // Only cache 10 images.
-            expiration: {
-                maxEntries: 10,
+            options: {
+                // Use a custom cache name.
+                cacheName: 'images',
             },
-        },
-    }],
+        }
+    ],
+
+    clientsClaim: true,
 
     skipWaiting: true
-})
-.injectManifest({
-  swSrc: './src/service-worker.js'
 });
 
 
