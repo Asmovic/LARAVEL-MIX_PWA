@@ -23,5 +23,5 @@ app.listen(PORT, () => console.log(`Server is up running on ${PORT}`));
 
 
 app.get('/service-worker.js', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'dist', 'service-worker.js'));
+  res.sendFile(path.resolve(__dirname, 'service-worker.js'));
 });
