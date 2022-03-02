@@ -15,17 +15,13 @@ require('laravel-mix-workbox');
  */
 
 // Configure what it does
-mix.setPublicPath('dist')
+mix
   .react('src/index.jsx', 'dist/js/')
   .js('src/service-worker.js', 'dist/')
   .sass('src/sass/main.scss', 'dist/css/')
   .copy('src/static', 'dist')
-  .webpackConfig({
-    output: { publicPath: '' }
-  })
+  .setPublicPath('dist')
   .generateSW({
-    // Set the path to the sw.js file
-    swDest: path.join(`${__dirname}/dist`, 'sw.js'),
 
     // Do not precache images
     exclude: [
@@ -46,29 +42,28 @@ mix.setPublicPath('dist')
             options: {
                 // Use a custom cache name.
                 cacheName: 'images',
+                expiration: {
+                  maxEntries: 10
+                }
             },
         }
     ],
 
-    clientsClaim: true,
-
     skipWaiting: true
-});
+})
+.injectManifest({
+  swSrc: './src/service-worker.js'
+})
 
 
 
-if (mix.inProduction()) {
+/* if (mix.inProduction()) {
   mix.version();
-}
+} */
 
 mix.browserSync({
   proxy: 'localhost:5000',
-  port: '3000',
-  files: [
-    'src/**/*.jsx',
-    'src/**/*.js',
-    'src/**/*.scss'
-  ],
+  port: '3000'
 });
 
 // Full API

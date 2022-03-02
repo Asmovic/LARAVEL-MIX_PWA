@@ -1,5 +1,5 @@
 {
-    "/js/index.js": "/js/index.js?id=430106d9b9974b538ed0",
-    "/service-worker.js": "/service-worker.js?id=9d0d06f92c2aa2b06f4b",
-    "/css/main.css": "/css/main.css?id=ca20c7127f5b99864508"
+    "/js/index.js": "/js/index.js",
+    "/service-worker.js": "/service-worker.js",
+    "/css/main.css": "/css/main.css"
 }
