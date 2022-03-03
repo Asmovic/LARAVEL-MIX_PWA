@@ -10,7 +10,7 @@ class HomePage extends React.PureComponent {
   render() {
     return (
       <div>
-        Welcome Home!!!
+        Welcome Home!!!. Let's get started.
       </div>
     );
   }
